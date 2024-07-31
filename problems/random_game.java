@@ -8,6 +8,7 @@ package problems;
  *
  * @author medom
  */
+
 import java.util.Scanner;
 import java.util.Random;
 public class random_game {
@@ -21,19 +22,20 @@ public class random_game {
          do {
             System.out.print("take a guess :");
             guesses = input.nextInt();
-            if (guesses==number){
+             if (guesses < 1 || guesses > 100){
+                System.out.println("your number is out of range");
+                 }
+            else if (guesses==number){
                 System.out.println("good job you win !! the number is "+number);
                 test = false ; }
             else if(guesses < number) {
                 System.out.println("your guess is a little bit  low ");
                 
             }
-            else if(guesses >number){
+            else{
                 System.out.println("your guess is a little bit  high ");
                }
-            else{
-                System.out.println("your number is out of range");
-                 }
+           
          
         
     }while (test);
